@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>postman</title>
+	
+</head>
+<body ng-app='user'>
+<div class="container">
+  <a href="#home" style="padding-left:50px;">Home</a>
+  <a href="#news">News</a>
+  <div class="dropdown" style="float:right;padding-right:20px;">
+    <button class="dropbtn" style=" width:200px;">Dropdown</button>
+    <div class="dropdown-content"  style="right:20px ;width:200px;" >
+      <a  href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div> 
+  <a href="#news">Link</a>
+</div>
+
+	<ng-view></ng-view>
+
+
+
+	
+</body>
+  	<link rel="stylesheet" href="style/style.css">
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/angular-route/angular-route.js"></script>
+	<script src="app/account/SIGNIN.js"></script>
+	<script src="app/account/SIGNUP.js"></script>
+	<script src="app/account/MAIN.js"></script>
+	<script src="app/services.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/account/MAIN.js"></script>
+	
+
+</html>
