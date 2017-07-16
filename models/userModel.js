@@ -6,45 +6,150 @@ var SALT_WORK_FACTOR = 10;
 // use schema to add it to mongo data base
 var UserSchema = new mongoose.Schema({
  firstName:{
+  type: String,
+  required: true,
+    // unique: true
+  },
+  lastName:{
     type: String,
     required: true,
     // unique: true
   },
-   lastName:{
+  email:{
+    type: String,
+    required: true,
+    unique: true
+  },
+  password:{
     type: String,
     required: true,
     // unique: true
   },
-   email:{
+  phone:{
     type: String,
-    required: true,
-     unique: true
-  },
-   password:{
-    type: String,
-    required: true,
+    //required: true,
     // unique: true
   },
-item: [
+  work_at:{
+    type: String,
+    //required: true,
+    // unique: true
+  },
+  address:{
+    type: String,
+    //required: true,
+    // unique: true
+  },
+  image:{
+    type: String,
+   //required: true,
+    // unique: true
+  },
+  education: [
   {
-name:{
-    type: String,
-   // required: true,
-    // unique: true
-  },
-  piece:{
-    type: String,
-    //required: true,
-    // unique: true
-  },
-  price:{
-    type: String,
-    //required: true,
-    // unique: true
-  }
-  }]
-  
-});
+    university:{
+      type: String,
+       // required: true,
+        // unique: true
+      },
+      Major:{
+        type: String,
+        //required: true,
+        // unique: true
+      },
+      description:{
+        type: String,
+        //required: true,
+        // unique: true
+      }
+    }],
+    skills:[
+    {
+      skill:{
+        type: String,
+       // required: true,
+        // unique: true
+      },
+      description:{
+        type: String,
+        //required: true,
+        // unique: true
+      }
+    }],
+    technical_skills:[
+    {
+      technical_skill:{
+        type: String,
+       // required: true,
+        // unique: true
+      },
+      description:{
+        type: String,
+        //required: true,
+        // unique: true
+      }
+    }],
+    certificates: [
+    {
+      certificate:{
+        type: String,
+       // required: true,
+        // unique: true
+      },
+      description:{
+        type: String,
+        //required: true,
+        // unique: true
+      }
+    }],
+    personal_projects: [
+    {
+      project:{
+        type: String,
+       // required: true,
+        // unique: true
+      },
+      description:{
+        type: String,
+        //required: true,
+        // unique: true
+      }
+    }],
+    experiences: [
+    {
+      experience:{
+        type: String,
+       // required: true,
+        // unique: true
+      },
+      Duration:{
+        type: String,
+        //required: true,
+        // unique: true
+      },
+      description:{
+        type: String,
+        //required: true,
+        // unique: true
+      }
+    }],
+    interests: [
+    {
+      interest:{
+        type: String,
+       // required: true,
+        // unique: true
+      }
+    }],
+    work_before: [
+    {
+      interest:{
+        type: String,
+       // required: true,
+        // unique: true
+      }
+    }]
+  });
 
 UserSchema.methods.comparePasswords = function (candidatePassword) {
   var savedPassword = this.password;

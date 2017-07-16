@@ -6,10 +6,19 @@
 	
 </head>
 <body ng-app='user'>
-<div class="container">
+<div class="container" ng-controller="indexController" >
   <a href="#home" style="padding-left:170px;"><img src="img/icon.png" width="17px"></a>
  	<input type="text" placeholder="Search On Job Finder" style="margin-top: 5px;margin-left: 5px;">
-  <div class="dropdown" style="float:right;padding-right:20px;">
+
+
+   
+      <a  href="#/signin" style="right:20px ;width:200px;float:right;padding-right:20px;" ng-if="email">signout</a>
+    
+      
+     
+
+
+  <div class="dropdown" style="float:right;padding-right:20px;" ng-if="!email">
     <button class="dropbtn" style=" width:200px;">get start</button>
     <div class="dropdown-content"  style="right:20px ;width:200px;" >
       <a  href="#/signin">SignIn</a>
@@ -31,6 +40,8 @@
 	<script src="lib/angular-route/angular-route.js"></script>
 	<script src="app/account/SIGNIN.js"></script>
 	<script src="app/account/SIGNUP.js"></script>
+	<script src="app/account/SIGNOUT.js"></script>
+	<script src="app/account/indexCtr.js"></script>
 	<script src="app/account/MAIN.js"></script>
 	<script src="app/services.js"></script>
 	<script src="app/app.js"></script>
