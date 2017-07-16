@@ -7,17 +7,17 @@
 </head>
 <body ng-app='user'>
 <div class="container">
-  <a href="#home" style="padding-left:50px;">Home</a>
-  <a href="#news">News</a>
+  <a href="#home" style="padding-left:170px;"><img src="img/icon.png" width="17px"></a>
+ 	<input type="text" placeholder="Search On Job Finder" style="margin-top: 5px;margin-left: 5px;">
   <div class="dropdown" style="float:right;padding-right:20px;">
-    <button class="dropbtn" style=" width:200px;">Dropdown</button>
+    <button class="dropbtn" style=" width:200px;">get start</button>
     <div class="dropdown-content"  style="right:20px ;width:200px;" >
-      <a  href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
+      <a  href="#/signin">SignIn</a>
+      <a href="#/signup">SignUp</a>
+      
     </div>
   </div> 
-  <a href="#news">Link</a>
+  <a href="#news" style="float:right;">Link</a>
 </div>
 
 	<ng-view></ng-view>
