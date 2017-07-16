@@ -5,21 +5,44 @@ var SALT_WORK_FACTOR = 10;
 
 // use schema to add it to mongo data base
 var UserSchema = new mongoose.Schema({
-  username: {
+ firstName:{
     type: String,
     required: true,
-    unique: true
+    // unique: true
   },
-
-  password: {
+   lastName:{
     type: String,
-    required: true
+    required: true,
+    // unique: true
   },
-  userType:String,
-  phone:String,
-  address:String,
-  emailAddress:String,
-  salt: String
+   email:{
+    type: String,
+    required: true,
+     unique: true
+  },
+   password:{
+    type: String,
+    required: true,
+    // unique: true
+  },
+item: [
+  {
+name:{
+    type: String,
+   // required: true,
+    // unique: true
+  },
+  piece:{
+    type: String,
+    //required: true,
+    // unique: true
+  },
+  price:{
+    type: String,
+    //required: true,
+    // unique: true
+  }
+  }]
   
 });
 
@@ -64,4 +87,4 @@ UserSchema.pre('save', function (next) {
   });
 });
 
-module.exports = mongoose.model('users', UserSchema);
+module.exports = mongoose.model('jobfinder_user ', UserSchema);

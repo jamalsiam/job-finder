@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 var session = require('express-session');
 
 var handlers = require('./handlers.js')
-var Book = require('./models/book');
+
 
 
 //middleware
@@ -20,10 +20,12 @@ var db = mongoose.connection;
 
 
 //app.get('/api/books',handlers.handelBook.showbook);
-//	app.post('/api/books',handlers.handelBook.addbook);
+app.post('/api/signup',handlers.handleUser.signUp);
 
 
 app.listen(process.env.PORT || 8000);
 console.log('Running on port 8000...');
 
 module.exports = app;
+
+

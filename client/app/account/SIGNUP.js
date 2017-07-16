@@ -7,13 +7,17 @@ angular.module('signup' , [])
 							lastName:lastName,
 							email:email,
 							password:password})
-			then(function(i){
-				if(i=="checkemail"){
-					$scope.msg="email used before"
+			.then(function(i){
+				console.log(i)
+				if(i=="User already exist!"){
+					$scope.msg="User already exist!"
 				}
 				else
 				{
-					///// go to new location and save in storage
+			$window.localStorage.setItem('job.finder.email', email );  
+			$window.location="/#/brofile";
+			$window.location.reload();   	
+
 				}
 			})
 

@@ -1,37 +1,36 @@
-var Book = require('./models/book.js');
+var User = require('./models/userModel.js');
 
 
-module.exports.handelBook = {
-  // get book from data base
-	showbook: function(req, res)  {
-		Book.getBooks(function(err, books)  {
-			if(err){
-				throw err;
-			}
-			res.json(books);
-		});
-	},
+module.exports.handleUser = {
+	signUp: function(req, res) {
+    var firstName = req.body.firstName;
+    var lastName = req.body.lastName;
+    var email = req.body.email;
+    var password = req.body.password;
+   
 
-  updatebook: function(req,res){
-    var book = req.body;
-    console.log(book)
-    Book.updateBooks({_id:req.body._id},req.body,function (err, book){
-      if(err){
-        throw err;
-      }
-      res.json(book);
-    });
-  },
-  // add book to data base
-	addbook : function(req, res)  {
-   console.log(req.body.price)
-		var book = req.body;
-		Book.addBook(book, function (err, book) {
-			if(err){
-				throw err;
-			}
-			res.json(book);
-		});
-	},
+    User.findOne({email: email})
+      .exec(function (err, user) {
+        if (user) {
+          res.json('User already exist!');
+        } else {
+          // make a new user if not one
+          return User.create({
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            password: password
+          }, function (err, newUser) {
+              // create token to send back for auth
+              if(err){
+                res.json(err);
+              } else {
+                
+                 res.json('signin');
+              }     
+          });
+        }
+      });
+  }
 }
 
