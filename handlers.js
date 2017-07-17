@@ -58,7 +58,22 @@ module.exports.handleUser = {
             });
         }
       });
+  },
+  getSettings: function(req,res) {
+
+    var email = req.body.email;
+    User.findOne({email: email})
+        .then(function (user) {
+        console.log(user.firstName)
+
+         res.json({firstName:user.firstName,lastName:user.lastName});
+        })
+  },
+  setSettings:function(req,res){
+
   }
+
+
   
 }
 

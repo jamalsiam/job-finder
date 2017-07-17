@@ -3,6 +3,7 @@ angular.module('user',
   ['signin',
    'signup',
    'signout',
+   'settings',
    'main',
    'index',
    'u.services',
@@ -25,6 +26,10 @@ angular.module('user',
   .when('/signout', {
       templateUrl: 'app/account/signout.html',
       controller:  'signoutController'
+    }) 
+  .when('/settings', {
+      templateUrl: 'app/account/settings.html',
+      controller:  'settingsController'
     }) 
  
     .otherwise({

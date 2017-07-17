@@ -34,3 +34,33 @@ angular.module('u.services', [])
     signIn:signIn
   }
 })
+.factory('Settings', function ($http) {
+  var setSettings= function (info) {
+ 
+    return $http({
+      method: 'POST',
+      url: '/api/setSettings',
+      data: info
+    }).then(function (res) {
+      return res.data;
+
+    });
+  };
+
+  var getSettings= function (info) {
+ 
+    return $http({
+      method: 'POST',
+      url: '/api/getSettings',
+      data: info
+    }).then(function (res) {
+      return res.data;
+
+    });
+  };
+
+  return {
+    setSettings:setSettings,
+    getSettings:getSettings
+  }
+})

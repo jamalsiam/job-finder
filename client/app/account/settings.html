@@ -1,0 +1,27 @@
+<form class="login">
+    <p>
+      <label for="login">First Name:</label>
+      <input type="text"  placeholder="first" ng-model="firstName" required>
+    </p>
+    <p>
+      <label for="login">Last Name:</label>
+      <input type="text" placeholder="last" ng-model="lastName" required>
+    </p>
+    <p>
+      <label for="login">Last Pass:</label>
+      <input type="password" placeholder="********" ng-model="lastPassword" >
+    </p>
+
+    <p>
+      <label for="password">New Pass:</label>
+      <input type="password"   placeholder="********" ng-model="newPassword" >
+    </p>
+
+
+    <p class="login-submit" style="margin-top:50px">
+      <button type="submit" class="login-button" ng-click="settings(firstName,lastName,lastPass,newPass)" >Login</button>
+    </p>
+    <h1 style="color:white; font-size:15px;">{{msg}}</h1>
+
+  </form>
+	
