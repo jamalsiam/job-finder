@@ -16,3 +16,21 @@ angular.module('u.services', [])
     signUp:signUp
   }
 })
+
+.factory('Signin', function ($http) {
+  var signIn= function (signin) {
+ 
+    return $http({
+      method: 'POST',
+      url: '/api/signin',
+      data: signin
+    }).then(function (res) {
+      return res.data;
+
+    });
+  };
+
+  return {
+    signIn:signIn
+  }
+})

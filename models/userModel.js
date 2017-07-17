@@ -151,6 +151,8 @@ var UserSchema = new mongoose.Schema({
     }]
   });
 
+
+
 UserSchema.methods.comparePasswords = function (candidatePassword) {
   var savedPassword = this.password;
   return Q.Promise(function (resolve, reject) {

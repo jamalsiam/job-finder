@@ -26,11 +26,7 @@ angular.module('user',
       templateUrl: 'app/account/signout.html',
       controller:  'signoutController'
     }) 
-  .when('/', {
-      templateUrl: 'app/account/index.html',
-      controller:  'indexController'
-    })
-
+ 
     .otherwise({
       redirectTo:'/main'
     })

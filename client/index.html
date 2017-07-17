@@ -10,12 +10,12 @@
   <a href="#home" style="padding-left:170px;"><img src="img/icon.png" width="17px"></a>
  	<input type="text" placeholder="Search On Job Finder" style="margin-top: 5px;margin-left: 5px;">
 
-
-   
-      <a  href="#/signin" style="right:20px ;width:200px;float:right;padding-right:20px;" ng-if="email">signout</a>
+      <a  href="#/signout" style="right:20px ;width:100px;float:right;padding-right:20px;" ng-if="email">signout</a>
     
-      
+    
+		  <a href="#settings" ng-if="email" style="float:right;"><img src="img/settings.png" width="17px"></a>      
      
+      	<a href="#/profile"ng-if="email" style="float:right;">{{email}}</a>    
 
 
   <div class="dropdown" style="float:right;padding-right:20px;" ng-if="!email">
@@ -26,8 +26,7 @@
       
     </div>
   </div> 
-  <a href="#news" style="float:right;">Link</a>
-</div>
+	</div>
 
 	<ng-view></ng-view>
 

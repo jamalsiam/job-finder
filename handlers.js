@@ -1,4 +1,5 @@
 var User = require('./models/userModel.js');
+var jwt = require('jwt-simple');
 
 
 module.exports.handleUser = {
@@ -26,11 +27,38 @@ module.exports.handleUser = {
               	res.json(err);
               } else {
               	
-              	res.json('signin');
+              	res.json('signUp');
               }     
           });
       }
   });
-	}
+	},
+  signIn: function(req,res) {
+
+    var email = req.body.email;
+    var password = req.body.password;
+
+    User.findOne({email: email})
+      .then(function (users) {
+       
+        if (!users) {
+           console.log( "user not found")
+          res.status(404).json("user not found")
+        } else {
+           users.comparePasswords(password)
+            .then(function (isMatch) {
+              if (isMatch) {
+                           console.log( "user ")
+
+                res.json("signIn")
+              } else {
+                console.log( "password ")
+                res.json("password not matched")
+              }
+            });
+        }
+      });
+  }
+  
 }
 

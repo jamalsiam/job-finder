@@ -14,7 +14,7 @@ angular.module('signup' , [])
 				}
 				else
 				{
-			$window.localStorage.setItem('job.finder.email', email );  
+			$window.localStorage.setItem("job.finder.email", email );  
 			$window.location="/#/brofile";
 			$window.location.reload();   	
 

@@ -1,19 +1,21 @@
 
-<form method="post" action="index.html" class="login">
+<form class="login">
     <p>
       <label for="login">Email:</label>
-      <input type="email" name="login" placeholder="name@example.com">
+      <input type="email" ng-model="email" placeholder="name@example.com">
     </p>
 
     <p>
       <label for="password">Password:</label>
-      <input type="password" name="password"  placeholder="********" >
+      <input type="password" ng-model="password"  placeholder="********" >
     </p>
 
     <p class="login-submit">
-      <button type="submit" class="login-button">Login</button>
+      <button type="submit" class="login-button" ng-click="signIn(email,password)"  >Login</button>
     </p>
+        <h1 style="color:white; font-size:15px;">{{msg}}</h1>
 
-    <p class="forgot-password"><a href="index.html">Forgot your password?</a></p>
+
+    <p class="forgot-password"><a >Forgot your password?</a></p>
   </form>
 	
