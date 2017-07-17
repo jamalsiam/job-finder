@@ -29,9 +29,9 @@ module.exports.handleUser = {
               	
               	res.json('signUp');
               }     
-          });
-      }
-  });
+            });
+        }
+      });
 	},
   signIn: function(req,res) {
 
@@ -39,41 +39,47 @@ module.exports.handleUser = {
     var password = req.body.password;
 
     User.findOne({email: email})
-      .then(function (users) {
-       
-        if (!users) {
-           console.log( "user not found")
-          res.status(404).json("user not found")
-        } else {
-           users.comparePasswords(password)
-            .then(function (isMatch) {
-              if (isMatch) {
-                           console.log( "user ")
+    .then(function (users) {
 
-                res.json("signIn")
-              } else {
-                console.log( "password ")
-                res.json("password not matched")
-              }
-            });
-        }
-      });
+      if (!users) {
+       console.log( "user not found")
+       res.status(404).json("user not found")
+     } else {
+       users.comparePasswords(password)
+       .then(function (isMatch) {
+        if (isMatch) {
+         console.log( "user ")
+
+         res.json("signIn")
+       } else {
+        console.log( "password ")
+        res.json("password not matched")
+      }
+    });
+     }
+   });
   },
   getSettings: function(req,res) {
 
     var email = req.body.email;
     User.findOne({email: email})
-        .then(function (user) {
-        console.log(user.firstName)
+    .then(function (user) {
+        //console.log(user.firstName)
 
-         res.json({firstName:user.firstName,lastName:user.lastName});
-        })
+        res.json({firstName:user.firstName,lastName:user.lastName});
+      })
   },
   setSettings:function(req,res){
 
-  }
+    User.update(
+      {email: req.body.email}, 
+      {$set: {firstName: req.body.firstName,
+        lastName: req.body.lastName}})
+    .then(function (user) {
+      console.log(user.firstName)
 
-
-  
+      res.json("s");
+    })
+  }  
 }
 

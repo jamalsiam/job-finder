@@ -2,7 +2,7 @@ angular.module('u.services', [])
 
 .factory('Signup', function ($http) {
   var signUp= function (signup) {
-  console.log(signup);
+    console.log(signup);
     return $http({
       method: 'POST',
       url: '/api/signup',
@@ -19,7 +19,7 @@ angular.module('u.services', [])
 
 .factory('Signin', function ($http) {
   var signIn= function (signin) {
- 
+   
     return $http({
       method: 'POST',
       url: '/api/signin',
@@ -36,7 +36,7 @@ angular.module('u.services', [])
 })
 .factory('Settings', function ($http) {
   var setSettings= function (info) {
- 
+   
     return $http({
       method: 'POST',
       url: '/api/setSettings',
@@ -48,7 +48,7 @@ angular.module('u.services', [])
   };
 
   var getSettings= function (info) {
- 
+   
     return $http({
       method: 'POST',
       url: '/api/getSettings',
