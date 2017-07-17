@@ -24,6 +24,9 @@ app.post('/api/signup',handlers.handleUser.signUp);
 app.post('/api/signin',handlers.handleUser.signIn);
 app.post('/api/setSettings',handlers.handleUser.setSettings);
 app.post('/api/getSettings',handlers.handleUser.getSettings);
+app.post('/api/getProfile',handlers.handleUser.getProfile);
+
+
 
 
 app.listen(process.env.PORT || 8000);

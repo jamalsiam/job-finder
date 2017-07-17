@@ -4,6 +4,7 @@ angular.module('user',
    'signup',
    'signout',
    'settings',
+   'profile',
    'main',
    'index',
    'u.services',
@@ -30,6 +31,10 @@ angular.module('user',
   .when('/settings', {
       templateUrl: 'app/account/settings.html',
       controller:  'settingsController'
+    }) 
+  .when('/profile', {
+      templateUrl: 'app/account/profile.html',
+      controller:  'profileController'
     }) 
  
     .otherwise({

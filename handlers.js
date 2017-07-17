@@ -80,6 +80,14 @@ module.exports.handleUser = {
 
       res.json("s");
     })
+  },
+  getProfile:function(req,res) {
+
+    var email = req.body.email;
+    User.findOne({email: email})
+    .then(function (user) {
+        res.json(user);
+      })
   }  
 }
 

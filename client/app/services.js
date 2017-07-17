@@ -64,3 +64,24 @@ angular.module('u.services', [])
     getSettings:getSettings
   }
 })
+
+.factory('Profile', function ($http) {
+  var getProfile= function (info) {
+   
+    return $http({
+      method: 'POST',
+      url: '/api/getProfile',
+      data: info
+    }).then(function (res) {
+      return res.data;
+
+    });
+  };
+
+  return {
+    getProfile:getProfile
+  }
+})
+
+
+
