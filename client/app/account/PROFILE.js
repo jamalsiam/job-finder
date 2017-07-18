@@ -68,6 +68,18 @@ angular.module('profile',[])
         });
         
     }
+    $scope.education=function(university,university_major,university_description){
+	    var record={university:university,
+	    			major:university_major,
+	    			description:university_description};
+	    $scope.info.education.push(record);	
+	    Profile.addEducation({email:email,record:record})
+	    	.then(function(i){
+			$scope.university="";
+			$scope.university_major="";
+			$scope.university_description="";
+			})
+    }
 
 
 });

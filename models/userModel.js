@@ -52,7 +52,7 @@ var UserSchema = new mongoose.Schema({
        // required: true,
         // unique: true
       },
-      Major:{
+      major:{
         type: String,
         //required: true,
         // unique: true

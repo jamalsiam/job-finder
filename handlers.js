@@ -133,6 +133,17 @@ module.exports.handleUser = {
 
       res.json("s");
     })
+  },
+  addEducation:function(req,res){
+
+    User.update(
+      {email: req.body.email}, 
+      {$push: {education: req.body.record}})
+    .then(function (user) {
+      console.log(user.firstName)
+
+      res.json("s");
+    })
   }
 }
 

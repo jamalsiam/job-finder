@@ -121,12 +121,23 @@ angular.module('u.services', [])
       return res.data;
     });
   };
+  var addEducation=function (info) {
+   
+    return $http({
+      method: 'POST',
+      url: '/api/Profile/addEducation',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  };
   return {
     getProfile:getProfile,
     setPhoneNumber:setPhoneNumber,
     setAddress:setAddress,
     setWorkAt:setWorkAt,
-    setImageProfile:setImageProfile
+    setImageProfile:setImageProfile,
+    addEducation:addEducation
   }
 })
 

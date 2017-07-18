@@ -1,3 +1,36 @@
+<style>
+
+  ul li input {
+    text-decoration: none;
+    
+    font-size: 20px;
+    margin: 5px;
+    display:inline-block;
+  }
+ul {
+
+  display: inline;
+  margin: 0;
+  padding: 0;
+} 
+ul li:hover ul {display: block;
+  border: solid;
+  border-color:#303030;
+  border-radius: 20px; 
+  }
+ul li ul {
+  position: absolute;
+  width: 340px;
+  display: none;
+}
+ul li ul li { 
+  background: #373737; 
+  display: block; 
+}
+ul li ul li a {display:block !important;} 
+
+</style>
+
 <span ng-repeat="one in info">
 
 
@@ -40,10 +73,25 @@
 <span style="float:left; margin-top:20px;margin-left:20px;color:white; width:70%">
 <center><p style="font-size:30px">{{info.firstName}} {{info.lastName}}</p></center>
 <div>
-<p style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Education</p>
+  <ul>
+    <li>
+      <span style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Education</span>
+     <img src="img/addIcon.png" height="15">
+      <ul>
+        
+        <li><input type="text" ng-model="university" placeholder="University"></li>
+        <li><input type="text" ng-model="university_major" placeholder="Major"></li>
+        <li><input type="text" ng-model="university_description" placeholder="Description"></li>
+        <li> <p class="login-submit" style="margin-top:55px;">
+      <button type="submit" class="login-button" ng-click="education(university,university_major,university_description)"  >d</button>
+    </p></li>
+       <li style="margin-left:10px;">add new record about Education</li>
+      </ul>
+    </li>
+  </ul>
 <ol style="margin-left:40px;" ng-repeat="one in info.education">
   <li style="font-size:30px;">{{one.university}}</li>
-  <li style="font-size:20px;">{{one.Major}}</li>
+  <li style="font-size:20px;">{{one.major}}</li>
   <li style="font-size:20px;">{{one.description}}</li>
 </ol>
 </div>

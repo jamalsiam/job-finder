@@ -29,6 +29,7 @@ app.post('/api/Profile/setPhoneNumber',handlers.handleUser.setPhoneNumber);
 app.post('/api/Profile/setAddress',handlers.handleUser.setAddress);
 app.post('/api/Profile/setWorkAt',handlers.handleUser.setWorkAt);
 app.post('/api/Profile/setImageProfile',handlers.handleUser.setImageProfile);
+app.post('/api/Profile/addEducation',handlers.handleUser.addEducation);
 
 
 
