@@ -78,8 +78,55 @@ angular.module('u.services', [])
     });
   };
 
+  var setPhoneNumber=function (info) {
+   
+    return $http({
+      method: 'POST',
+      url: '/api/Profile/setPhoneNumber',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  };
+
+  var setAddress=function (info) {
+   
+    return $http({
+      method: 'POST',
+      url: '/api/Profile/setAddress',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  };
+
+  var setWorkAt=function (info) {
+   
+    return $http({
+      method: 'POST',
+      url: '/api/Profile/setWorkAt',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  };
+
+  var setImageProfile=function (info) {
+   
+    return $http({
+      method: 'POST',
+      url: '/api/Profile/setImageProfile',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  };
   return {
-    getProfile:getProfile
+    getProfile:getProfile,
+    setPhoneNumber:setPhoneNumber,
+    setAddress:setAddress,
+    setWorkAt:setWorkAt,
+    setImageProfile:setImageProfile
   }
 })
 

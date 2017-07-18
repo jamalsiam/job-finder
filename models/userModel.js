@@ -40,9 +40,9 @@ var UserSchema = new mongoose.Schema({
     //required: true,
     // unique: true
   },
-  image:{
+  image_profile:{
     type: String,
-   //required: true,
+   required: true,
     // unique: true
   },
   education: [
@@ -122,7 +122,7 @@ var UserSchema = new mongoose.Schema({
        // required: true,
         // unique: true
       },
-      Duration:{
+      duration:{
         type: String,
         //required: true,
         // unique: true
@@ -143,9 +143,14 @@ var UserSchema = new mongoose.Schema({
     }],
     work_before: [
     {
-      interest:{
+      company:{
         type: String,
        // required: true,
+        // unique: true
+      },
+      duration:{
+        type: String,
+        //required: true,
         // unique: true
       }
     }]

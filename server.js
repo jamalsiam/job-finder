@@ -25,7 +25,10 @@ app.post('/api/signin',handlers.handleUser.signIn);
 app.post('/api/setSettings',handlers.handleUser.setSettings);
 app.post('/api/getSettings',handlers.handleUser.getSettings);
 app.post('/api/getProfile',handlers.handleUser.getProfile);
-
+app.post('/api/Profile/setPhoneNumber',handlers.handleUser.setPhoneNumber);
+app.post('/api/Profile/setAddress',handlers.handleUser.setAddress);
+app.post('/api/Profile/setWorkAt',handlers.handleUser.setWorkAt);
+app.post('/api/Profile/setImageProfile',handlers.handleUser.setImageProfile);
 
 
 

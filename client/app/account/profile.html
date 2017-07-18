@@ -1,1 +1,133 @@
-<a href="">profile</a>
+<span ng-repeat="one in info">
+
+
+</span>
+
+<span style="float:left; margin-top:20px;margin-left:20px;">
+<img src="{{info.image_profile}}" height="250" width="200" style="margin-bottom:20px;" >
+<table style="width:100%; color:white;">
+  <br>
+  <input type='file' ng-model-instant onchange="angular.element(this).scope().imageUpload(event)" multiple />
+  
+  <tr >
+    <td><img src="img/emailIcon.ico" height="35"></td>
+    <td >{{info.email}}</td>
+
+  </tr>
+   <tr ng-click="phoneNumber()">
+    <td><img src="img/phoneIcon.ico" height="35"></td>
+    <td>{{info.phone}}</td>
+        
+  </tr>
+   <tr ng-click="address()">
+    <td><img src="img/locationIcon.png" height="35"></td>
+    <td>{{info.address}}</td>
+  
+  </tr>
+  </tr>
+   <tr ng-click="work_at()">
+    <td><img src="img/workicon.png" height="35"></td>
+    <td>{{info.work_at}}</td>
+  
+  </tr>
+
+  
+</table>
+</span>
+
+
+
+<span style="float:left; margin-top:20px;margin-left:20px;color:white; width:70%">
+<center><p style="font-size:30px">{{info.firstName}} {{info.lastName}}</p></center>
+<div>
+<p style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Education</p>
+<ol style="margin-left:40px;" ng-repeat="one in info.education">
+  <li style="font-size:30px;">{{one.university}}</li>
+  <li style="font-size:20px;">{{one.Major}}</li>
+  <li style="font-size:20px;">{{one.description}}</li>
+</ol>
+</div>
+
+<div>
+<p style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Skills</p>
+<ol style="margin-left:40px;" ng-repeat="one in info.skills">
+  <li  style="font-size:30px;">{{one.skill}}</li>
+  <li  style="font-size:20px;">{{one.description}}</li>
+  
+</ol>
+</div>
+
+<div>
+<p style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Technical Skills
+</p>
+<ol style="margin-left:40px;" ng-repeat="one in info.technical_skills">
+  <li  style="font-size:30px;">{{one.skill}}</li>
+  <li  style="font-size:20px;">{{one.description}}</li>
+  
+</ol>
+</div>
+
+<div>
+<p style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Certificates</p>
+<ol style="margin-left:40px;" ng-repeat="one in info.certificates">
+  <li  style="font-size:30px;">{{one.certificate}}</li>
+  <li  style="font-size:20px;">{{one.description}}</li>
+  
+</ol>
+</div>
+
+
+
+
+<div>
+<p style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Personal Projects</p>
+<ol style="margin-left:40px;" ng-repeat="one in info.personal_projects">
+  <li  style="font-size:30px;">{{one.project}}</li>
+  <li  style="font-size:20px;">{{one.description}}</li>
+  
+</ol>
+</div>
+
+
+
+
+<div>
+<p style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Experiences</p>
+<ol style="margin-left:40px;" ng-repeat="one in info.experiences">
+  <li  style="font-size:30px;">{{one.experience}}</li>
+    <li  style="font-size:30px;">{{one.duration}}</li>
+  <li  style="font-size:20px;">{{one.description}}</li>
+  
+</ol>
+</div>
+
+
+
+
+
+
+<div>
+<p style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Interests</p>
+<ol style="margin-left:40px;" ng-repeat="one in info.interests">
+  <li  style="font-size:30px;">{{one.interest}}</li>  
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+<div>
+<p style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Work Before</p>
+<ol style="margin-left:40px;" ng-repeat="one in info.work_before">
+  <li  style="font-size:30px;">{{one.company}}</li>
+  <li  style="font-size:20px;">{{one.duration}}</li>
+  
+</ol>
+</div>
+
+</span>
