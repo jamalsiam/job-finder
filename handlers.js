@@ -31,196 +31,196 @@ module.exports.handleUser = {
               	res.json('signUp');
               }     
             });
-        }
-      });
-	},
-  signIn: function(req,res) {
+}
+});
+},
+signIn: function(req,res) {
 
-    var email = req.body.email;
-    var password = req.body.password;
+  var email = req.body.email;
+  var password = req.body.password;
 
-    User.findOne({email: email})
-    .then(function (users) {
+  User.findOne({email: email})
+  .then(function (users) {
 
-      if (!users) {
-       console.log( "user not found")
-       res.status(404).json("user not found")
+    if (!users) {
+     console.log( "user not found")
+     res.status(404).json("user not found")
+   } else {
+     users.comparePasswords(password)
+     .then(function (isMatch) {
+      if (isMatch) {
+       console.log( "user ")
+
+       res.json("signIn")
      } else {
-       users.comparePasswords(password)
-       .then(function (isMatch) {
-        if (isMatch) {
-         console.log( "user ")
+      console.log( "password ")
+      res.json("password not matched")
+    }
+  });
+   }
+ });
+},
+getSettings: function(req,res) {
 
-         res.json("signIn")
-       } else {
-        console.log( "password ")
-        res.json("password not matched")
-      }
-    });
-     }
-   });
-  },
-  getSettings: function(req,res) {
-
-    var email = req.body.email;
-    User.findOne({email: email})
-    .then(function (user) {
+  var email = req.body.email;
+  User.findOne({email: email})
+  .then(function (user) {
         //console.log(user.firstName)
 
         res.json({firstName:user.firstName,lastName:user.lastName});
       })
-  },
-  setSettings:function(req,res){
+},
+setSettings:function(req,res){
 
-    User.update(
-      {email: req.body.email}, 
-      {$set: {firstName: req.body.firstName,
-        lastName: req.body.lastName}})
-    .then(function (user) {
-      console.log(user.firstName)
+  User.update(
+    {email: req.body.email}, 
+    {$set: {firstName: req.body.firstName,
+      lastName: req.body.lastName}})
+  .then(function (user) {
+    console.log(user.firstName)
 
-      res.json("s");
-    })
-  },
-  getProfile:function(req,res) {
+    res.json("s");
+  })
+},
+getProfile:function(req,res) {
 
-    var email = req.body.email;
-    User.findOne({email: email})
-    .then(function (user) {
-        res.json(user);
-      })
-  },
-  setPhoneNumber:function(req,res){
+  var email = req.body.email;
+  User.findOne({email: email})
+  .then(function (user) {
+    res.json(user);
+  })
+},
+setPhoneNumber:function(req,res){
 
-    User.update(
-      {email: req.body.email}, 
-      {$set: {phone: req.body.phone}})
-    .then(function (user) {
-      console.log(user.firstName)
+  User.update(
+    {email: req.body.email}, 
+    {$set: {phone: req.body.phone}})
+  .then(function (user) {
+    console.log(user.firstName)
 
-      res.json("s");
-    })
-  },
-  setAddress:function(req,res){
+    res.json("s");
+  })
+},
+setAddress:function(req,res){
 
-    User.update(
-      {email: req.body.email}, 
-      {$set: {address: req.body.address}})
-    .then(function (user) {
-      console.log(user.firstName)
+  User.update(
+    {email: req.body.email}, 
+    {$set: {address: req.body.address}})
+  .then(function (user) {
+    console.log(user.firstName)
 
-      res.json("s");
-    })
-  },
-  setWorkAt:function(req,res){
+    res.json("s");
+  })
+},
+setWorkAt:function(req,res){
 
-    User.update(
-      {email: req.body.email}, 
-      {$set: {work_at: req.body.work_at}})
-    .then(function (user) {
-      console.log(user.firstName)
+  User.update(
+    {email: req.body.email}, 
+    {$set: {work_at: req.body.work_at}})
+  .then(function (user) {
+    console.log(user.firstName)
 
-      res.json("s");
-    })
-  },
-  setImageProfile:function(req,res){
+    res.json("s");
+  })
+},
+setImageProfile:function(req,res){
 
-    User.update(
-      {email: req.body.email}, 
-      {$set: {image_profile: req.body.image_profile}})
-    .then(function (user) {
-      console.log(user.firstName)
+  User.update(
+    {email: req.body.email}, 
+    {$set: {image_profile: req.body.image_profile}})
+  .then(function (user) {
+    console.log(user.firstName)
 
-      res.json("s");
-    })
-  },
-  addEducation:function(req,res){
+    res.json("s");
+  })
+},
+addEducation:function(req,res){
 
-    User.update(
-      {email: req.body.email}, 
-      {$push: {education: req.body.record}})
-    .then(function (user) {
-      console.log(user.firstName)
+  User.update(
+    {email: req.body.email}, 
+    {$push: {education: req.body.record}})
+  .then(function (user) {
+    console.log(user.firstName)
 
-      res.json("s");
-    })
-  },
-  addSkills:function(req,res){
+    res.json("s");
+  })
+},
+addSkills:function(req,res){
 
-    User.update(
-      {email: req.body.email}, 
-      {$push: {skills: req.body.record}})
-    .then(function (user) {
-      console.log(user.firstName)
+  User.update(
+    {email: req.body.email}, 
+    {$push: {skills: req.body.record}})
+  .then(function (user) {
+    console.log(user.firstName)
 
-      res.json("s");
-    })
-  },
-  addTechnicalSkills:function(req,res){
+    res.json("s");
+  })
+},
+addTechnicalSkills:function(req,res){
 
-    User.update(
-      {email: req.body.email}, 
-      {$push: {technical_skills: req.body.record}})
-    .then(function (user) {
-      console.log(user.firstName)
+  User.update(
+    {email: req.body.email}, 
+    {$push: {technical_skills: req.body.record}})
+  .then(function (user) {
+    console.log(user.firstName)
 
-      res.json("s");
-    })
-  },
-  addCertificates:function(req,res){
+    res.json("s");
+  })
+},
+addCertificates:function(req,res){
 
-    User.update(
-      {email: req.body.email}, 
-      {$push: {certificates: req.body.record}})
-    .then(function (user) {
-      console.log(user.firstName)
+  User.update(
+    {email: req.body.email}, 
+    {$push: {certificates: req.body.record}})
+  .then(function (user) {
+    console.log(user.firstName)
 
-      res.json("s");
-    })
-  },
-  addPersonalProjects:function(req,res){
+    res.json("s");
+  })
+},
+addPersonalProjects:function(req,res){
 
-    User.update(
-      {email: req.body.email}, 
-      {$push: {personal_projects: req.body.record}})
-    .then(function (user) {
-      console.log(user.firstName)
+  User.update(
+    {email: req.body.email}, 
+    {$push: {personal_projects: req.body.record}})
+  .then(function (user) {
+    console.log(user.firstName)
 
-      res.json("s");
-    })
-  },
-  addExperiences:function(req,res){
+    res.json("s");
+  })
+},
+addExperiences:function(req,res){
 
-    User.update(
-      {email: req.body.email}, 
-      {$push: {experiences: req.body.record}})
-    .then(function (user) {
-      console.log(user.firstName)
+  User.update(
+    {email: req.body.email}, 
+    {$push: {experiences: req.body.record}})
+  .then(function (user) {
+    console.log(user.firstName)
 
-      res.json("s");
-    })
-  },
-  addInterests:function(req,res){
+    res.json("s");
+  })
+},
+addInterests:function(req,res){
 
-    User.update(
-      {email: req.body.email}, 
-      {$push: {interests: req.body.record}})
-    .then(function (user) {
-      console.log(user.firstName)
+  User.update(
+    {email: req.body.email}, 
+    {$push: {interests: req.body.record}})
+  .then(function (user) {
+    console.log(user.firstName)
 
-      res.json("s");
-    })
-  },
-  addWorkBefore:function(req,res){
+    res.json("s");
+  })
+},
+addWorkBefore:function(req,res){
 
-    User.update(
-      {email: req.body.email}, 
-      {$push: {work_before: req.body.record}})
-    .then(function (user) {
-      console.log(user.firstName)
+  User.update(
+    {email: req.body.email}, 
+    {$push: {work_before: req.body.record}})
+  .then(function (user) {
+    console.log(user.firstName)
 
-      res.json("s");
-    })
-  }
+    res.json("s");
+  })
+}
 }
 

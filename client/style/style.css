@@ -344,3 +344,22 @@ label {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+.classTwo{
+  margin-left:40px;
+  margin-top:10px;
+  margin-bottom:10px;
+  font-size:15px;
+
+}
+.classOne{
+  margin-top:10px;
+  margin-bottom:10px;
+  font-size:17px;
+}
+.labelSet{
+  font-style: italic;
+  font-size:20px;
+  margin-left:20px;
+  margin-top:20px;
+  color: #aaaaaa;
+}
