@@ -131,13 +131,98 @@ angular.module('u.services', [])
       return res.data;
     });
   };
+  var addSkills=function (info) {
+   
+    return $http({
+      method: 'POST',
+      url: '/api/Profile/addSkills',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  };
+  var addTechnicalSkills=function (info) {
+   
+    return $http({
+      method: 'POST',
+      url: '/api/Profile/addTechnicalSkills',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  };
+
+
+   var addCertificates=function (info) {
+   
+    return $http({
+      method: 'POST',
+      url: '/api/Profile/addCertificates',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  };
+
+   var addPersonalProjects=function (info) {
+   
+    return $http({
+      method: 'POST',
+      url: '/api/Profile/addPersonalProjects',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  };
+
+   var addExperiences=function (info) {
+   
+    return $http({
+      method: 'POST',
+      url: '/api/Profile/addExperiences',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  };
+
+   var addInterests=function (info) {
+   
+    return $http({
+      method: 'POST',
+      url: '/api/Profile/addInterests',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  };
+
+   var addWorkBefore=function (info) {
+   
+    return $http({
+      method: 'POST',
+      url: '/api/Profile/addWorkBefore',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  };
   return {
     getProfile:getProfile,
     setPhoneNumber:setPhoneNumber,
     setAddress:setAddress,
     setWorkAt:setWorkAt,
     setImageProfile:setImageProfile,
-    addEducation:addEducation
+    addEducation:addEducation,
+    addSkills:addSkills,
+    addTechnicalSkills:addTechnicalSkills,
+    addWorkBefore:addWorkBefore,
+    addInterests:addInterests,
+    addExperiences:addExperiences,
+    addPersonalProjects:addPersonalProjects,
+    addCertificates:addCertificates
+
+    
   }
 })
 

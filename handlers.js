@@ -144,6 +144,83 @@ module.exports.handleUser = {
 
       res.json("s");
     })
+  },
+  addSkills:function(req,res){
+
+    User.update(
+      {email: req.body.email}, 
+      {$push: {skills: req.body.record}})
+    .then(function (user) {
+      console.log(user.firstName)
+
+      res.json("s");
+    })
+  },
+  addTechnicalSkills:function(req,res){
+
+    User.update(
+      {email: req.body.email}, 
+      {$push: {technical_skills: req.body.record}})
+    .then(function (user) {
+      console.log(user.firstName)
+
+      res.json("s");
+    })
+  },
+  addCertificates:function(req,res){
+
+    User.update(
+      {email: req.body.email}, 
+      {$push: {certificates: req.body.record}})
+    .then(function (user) {
+      console.log(user.firstName)
+
+      res.json("s");
+    })
+  },
+  addPersonalProjects:function(req,res){
+
+    User.update(
+      {email: req.body.email}, 
+      {$push: {personal_projects: req.body.record}})
+    .then(function (user) {
+      console.log(user.firstName)
+
+      res.json("s");
+    })
+  },
+  addExperiences:function(req,res){
+
+    User.update(
+      {email: req.body.email}, 
+      {$push: {experiences: req.body.record}})
+    .then(function (user) {
+      console.log(user.firstName)
+
+      res.json("s");
+    })
+  },
+  addInterests:function(req,res){
+
+    User.update(
+      {email: req.body.email}, 
+      {$push: {interests: req.body.record}})
+    .then(function (user) {
+      console.log(user.firstName)
+
+      res.json("s");
+    })
+  },
+  addWorkBefore:function(req,res){
+
+    User.update(
+      {email: req.body.email}, 
+      {$push: {work_before: req.body.record}})
+    .then(function (user) {
+      console.log(user.firstName)
+
+      res.json("s");
+    })
   }
 }
 

@@ -30,6 +30,13 @@ app.post('/api/Profile/setAddress',handlers.handleUser.setAddress);
 app.post('/api/Profile/setWorkAt',handlers.handleUser.setWorkAt);
 app.post('/api/Profile/setImageProfile',handlers.handleUser.setImageProfile);
 app.post('/api/Profile/addEducation',handlers.handleUser.addEducation);
+app.post('/api/Profile/addSkills',handlers.handleUser.addSkills);
+app.post('/api/Profile/addTechnicalSkills',handlers.handleUser.addTechnicalSkills);
+app.post('/api/Profile/addCertificates',handlers.handleUser.addCertificates);
+app.post('/api/Profile/addPersonalProjects',handlers.handleUser.addPersonalProjects);
+app.post('/api/Profile/addExperiences',handlers.handleUser.addExperiences);
+app.post('/api/Profile/addInterests',handlers.handleUser.addInterests);
+app.post('/api/Profile/addWorkBefore',handlers.handleUser.addWorkBefore);
 
 
 

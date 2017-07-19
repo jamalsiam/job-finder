@@ -1,4 +1,23 @@
 <style>
+.classTwo{
+  margin-left:40px;
+  margin-top:10px;
+  margin-bottom:10px;
+  font-size:15px;
+
+}
+.classOne{
+  margin-top:10px;
+  margin-bottom:10px;
+  font-size:17px;
+}
+.labelSet{
+  font-style: italic;
+  font-size:20px;
+  margin-left:20px;
+  margin-top:20px;
+  color: #aaaaaa;
+}
 
   ul li input {
     text-decoration: none;
@@ -25,7 +44,8 @@ ul li ul {
 }
 ul li ul li { 
   background: #373737; 
-  display: block; 
+  display: block;
+   
 }
 ul li ul li a {display:block !important;} 
 
@@ -36,7 +56,7 @@ ul li ul li a {display:block !important;}
 
 </span>
 
-<span style="float:left; margin-top:20px;margin-left:20px;">
+<span style="float:left; margin-top:20px;margin-left:20px; ">
 <img src="{{info.image_profile}}" height="250" width="200" style="margin-bottom:20px;" >
 <table style="width:100%; color:white;">
   <br>
@@ -44,12 +64,12 @@ ul li ul li a {display:block !important;}
   
   <tr >
     <td><img src="img/emailIcon.ico" height="35"></td>
-    <td >{{info.email}}</td>
+    <td style="margin-bottom:10px;" >{{info.email}}</td>
 
   </tr>
    <tr ng-click="phoneNumber()">
     <td><img src="img/phoneIcon.ico" height="35"></td>
-    <td>{{info.phone}}</td>
+    <td >{{info.phone}}</td>
         
   </tr>
    <tr ng-click="address()">
@@ -75,7 +95,7 @@ ul li ul li a {display:block !important;}
 <div>
   <ul>
     <li>
-      <span style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Education</span>
+      <span class="labelSet">Education</span>
      <img src="img/addIcon.png" height="15">
       <ul>
         
@@ -90,36 +110,76 @@ ul li ul li a {display:block !important;}
     </li>
   </ul>
 <ol style="margin-left:40px;" ng-repeat="one in info.education">
-  <li style="font-size:30px;">{{one.university}}</li>
-  <li style="font-size:20px;">{{one.major}}</li>
-  <li style="font-size:20px;">{{one.description}}</li>
+  <li  class="classOne">{{one.university}}</li>
+  <li  class="classTwo">{{one.major}}</li>
+  <li  class="classTwo">{{one.description}}</li>
 </ol>
 </div>
 
 <div>
-<p style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Skills</p>
+  <ul>
+    <li>
+      <span class="labelSet">Skills</span>
+     <img src="img/addIcon.png" height="15">
+      <ul>
+        
+        <li><input type="text" ng-model="skill" placeholder="skill"></li>
+        <li><input type="text" ng-model="skill_description" placeholder="Description"></li>
+        <li> <p class="login-submit" style="margin-top:55px;">
+      <button type="submit" class="login-button" ng-click="skills(skill,skill_description)"  >d</button>
+    </p></li>
+       <li style="margin-left:10px;">add new record about skills</li>
+      </ul>
+    </li>
+  </ul>
 <ol style="margin-left:40px;" ng-repeat="one in info.skills">
-  <li  style="font-size:30px;">{{one.skill}}</li>
-  <li  style="font-size:20px;">{{one.description}}</li>
+  <li    class="classOne">{{one.skill}}</li>
+  <li    class="classTwo">{{one.description}}</li>
   
 </ol>
 </div>
-
 <div>
-<p style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Technical Skills
-</p>
+  <ul>
+    <li>
+      <span class="labelSet">Technical Skills</span>
+     <img src="img/addIcon.png" height="15">
+      <ul>
+        
+        <li><input type="text" ng-model="technical_skill" placeholder="skill"></li>
+        <li><input type="text" ng-model="Technical_skill_description" placeholder="Description"></li>
+        <li> <p class="login-submit" style="margin-top:55px;">
+      <button type="submit" class="login-button" ng-click="technical_skills(technical_skill,Technical_skill_description)"  >d</button>
+    </p></li>
+       <li style="margin-left:10px;">add new record about Technical Skills</li>
+      </ul>
+    </li>
+  </ul>
 <ol style="margin-left:40px;" ng-repeat="one in info.technical_skills">
-  <li  style="font-size:30px;">{{one.skill}}</li>
-  <li  style="font-size:20px;">{{one.description}}</li>
+  <li    class="classOne">{{one.technical_skill}}</li>
+  <li    class="classTwo">{{one.description}}</li>
   
 </ol>
 </div>
 
 <div>
-<p style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Certificates</p>
+  <ul>
+    <li>
+      <span class="labelSet">Certificates</span>
+     <img src="img/addIcon.png" height="15">
+      <ul>
+        
+        <li><input type="text" ng-model="certificate" placeholder="certificate"></li>
+        <li><input type="text" ng-model="certificate_description" placeholder="Description"></li>
+        <li> <p class="login-submit" style="margin-top:55px;">
+      <button type="submit" class="login-button" ng-click="certificates(certificate,certificate_description)">d</button>
+    </p></li>
+       <li style="margin-left:10px;">add new record about certificate</li>
+      </ul>
+    </li>
+  </ul>
 <ol style="margin-left:40px;" ng-repeat="one in info.certificates">
-  <li  style="font-size:30px;">{{one.certificate}}</li>
-  <li  style="font-size:20px;">{{one.description}}</li>
+  <li    class="classOne">{{one.certificate}}</li>
+  <li    class="classTwo">{{one.description}}</li>
   
 </ol>
 </div>
@@ -128,23 +188,51 @@ ul li ul li a {display:block !important;}
 
 
 <div>
-<p style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Personal Projects</p>
+  <ul>
+    <li>
+      <span class="labelSet">Personal Projects</span>
+     <img src="img/addIcon.png" height="15">
+      <ul>
+        
+        <li><input type="text" ng-model="project" placeholder="certificate"></li>
+        <li><input type="text" ng-model="project_description" placeholder="Description"></li>
+        <li> <p class="login-submit" style="margin-top:55px;">
+      <button type="submit" class="login-button" ng-click="personal_projects(project,project_description)">d</button>
+    </p></li>
+       <li style="margin-left:10px;">add new record about Personal Projects</li>
+      </ul>
+    </li>
+  </ul>
 <ol style="margin-left:40px;" ng-repeat="one in info.personal_projects">
-  <li  style="font-size:30px;">{{one.project}}</li>
-  <li  style="font-size:20px;">{{one.description}}</li>
+  <li    class="classOne">{{one.project}}</li>
+  <li    class="classTwo">{{one.description}}</li>
   
 </ol>
 </div>
 
 
 
-
 <div>
-<p style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Experiences</p>
+  <ul>
+    <li>
+      <span class="labelSet">Experiences</span>
+     <img src="img/addIcon.png" height="15">
+      <ul>
+        
+        <li><input type="text" ng-model="experience" placeholder="experience"></li>
+        <li><input type="text" ng-model="experience_duration" placeholder="duration"></li>
+        <li><input type="text" ng-model="experience_description" placeholder="Description"></li>
+        <li> <p class="login-submit" style="margin-top:55px;">
+      <button type="submit" class="login-button" ng-click="experiences(experience,experience_duration,experience_description)">d</button>
+    </p></li>
+       <li style="margin-left:10px;">add new record about Experiences</li>
+      </ul>
+    </li>
+  </ul>
 <ol style="margin-left:40px;" ng-repeat="one in info.experiences">
-  <li  style="font-size:30px;">{{one.experience}}</li>
-    <li  style="font-size:30px;">{{one.duration}}</li>
-  <li  style="font-size:20px;">{{one.description}}</li>
+  <li    class="classOne">{{one.experience}}</li>
+    <li   class="classTwo">{{one.duration}}</li>
+  <li class="classTwo">{{one.description}}</li>
   
 </ol>
 </div>
@@ -154,10 +242,25 @@ ul li ul li a {display:block !important;}
 
 
 
+
 <div>
-<p style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Interests</p>
+  <ul>
+    <li>
+      <span class="labelSet">Interests</span>
+     <img src="img/addIcon.png" height="15">
+      <ul>
+        
+        <li><input type="text" ng-model="interest" placeholder="interest"></li>
+        
+        <li> <p class="login-submit" style="margin-top:55px;">
+      <button type="submit" class="login-button" ng-click="interests(interest)">d</button>
+    </p></li>
+       <li style="margin-left:10px;">add new record about Interests</li>
+      </ul>
+    </li>
+  </ul>
 <ol style="margin-left:40px;" ng-repeat="one in info.interests">
-  <li  style="font-size:30px;">{{one.interest}}</li>  
+  <li  style="font-size:30px;margin-left:40px;" class="classTwo">{{one.interest}}</li>  
 </ol>
 </div>
 
@@ -168,12 +271,28 @@ ul li ul li a {display:block !important;}
 
 
 
-
 <div>
-<p style="font-style: italic;font-size:30px;margin-left:20px;margin-top:20px;">Work Before</p>
+  <ul>
+    <li>
+      <span class="labelSet">Work Before</span>
+     <img src="img/addIcon.png" height="15">
+      <ul>
+        
+        <li><input type="text" ng-model="work" placeholder="Company"></li>
+        <li><input type="text" ng-model="work_duration" placeholder="duration"></li>
+      
+        <li> <p class="login-submit" style="margin-top:55px;">
+      <button type="submit" class="login-button" ng-click="work_before(work,work_duration)">d</button>
+    </p></li>
+       <li style="margin-left:10px;">add new record about Experiences of work in this company</li>
+      </ul>
+    </li>
+  </ul>
+
+
 <ol style="margin-left:40px;" ng-repeat="one in info.work_before">
-  <li  style="font-size:30px;">{{one.company}}</li>
-  <li  style="font-size:20px;">{{one.duration}}</li>
+  <li   class="classOne">{{one.company}}</li>
+  <li   class="classTwo">{{one.duration}}</li>
   
 </ol>
 </div>
