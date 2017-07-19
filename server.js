@@ -38,6 +38,7 @@ app.post('/api/Profile/addPersonalProjects',handlers.handleUser.addPersonalProje
 app.post('/api/Profile/addExperiences',handlers.handleUser.addExperiences);
 app.post('/api/Profile/addInterests',handlers.handleUser.addInterests);
 app.post('/api/Profile/addWorkBefore',handlers.handleUser.addWorkBefore);
+app.post('/api/uploadPost',handlers.handlePost.uploadPost);
 
 
 

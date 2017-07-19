@@ -1,44 +1,12 @@
-<style> 
-.search {
-    width: 100%;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-}
-.uploadBox{
-        top: 120px;
-        border-radius: 15px;
-        margin: 10px  auto;
-        width: 1800px;
-        padding: 40px;
-        border:1px solid #ccc;
-        background-color:  #aaaaaa;
-        width: 60% 
-    
-            } 
-	.cc{
-		border-width: 100%;
-	}	  
-</style>
+
 <br>
 <div class="uploadBox" >
-
-
     <div>
-
-<textarea class="statusBox" placeholder="what on your mind ??" ng-model="status" 
-style="width:100%;resize: none;padding-bottom:40px;" ></textarea><br>
-</div>
-
-<br>
-<input type="submit"
-
-  
+        <textarea class="statusBox" placeholder="what is your problem or  advice ??" ng-model="post"style="width:100%;resize: none;padding-bottom:40px;" required ></textarea><br>
     </div>
+    <br>
+    <input type="submit" ng-click="posting(post)" value="post">
+</div>
 
 
 

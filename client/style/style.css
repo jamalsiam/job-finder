@@ -363,3 +363,13 @@ label {
   margin-top:20px;
   color: #aaaaaa;
 }
+.uploadBox{
+  top: 120px;
+  border-radius: 7px;
+  margin: 10px  auto;
+  padding: 20px;
+  border:1px solid #ccc;
+  background-color:  #333;
+  width: 60% 
+    
+} 

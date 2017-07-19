@@ -228,3 +228,18 @@ angular.module('u.services', [])
 
 
 
+.factory('Post', function ($http) {
+  var uploadPost= function (info) {
+    return $http({
+      method: 'POST',
+      url: '/api/uploadPost',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  };
+
+  return {
+    uploadPost:uploadPost
+  }
+})
