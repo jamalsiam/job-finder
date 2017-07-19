@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 var session = require('express-session');
+var firebase =require('firebase');
 
 var handlers = require('./handlers.js')
 

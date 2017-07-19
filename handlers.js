@@ -1,5 +1,11 @@
 var User = require('./models/userModel.js');
 var jwt = require('jwt-simple');
+var firebase =require('firebase');
+firebase.initializeApp({
+  serviceAccount:"./gcmjamal-665c44be50fd.json",
+  databaseURL:"https://gcmjamal-148716.firebaseio.com"
+});
+var refPost=firebase.database().ref('post-client');
 
 
 module.exports.handleUser = {
