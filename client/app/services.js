@@ -252,3 +252,22 @@ angular.module('u.services', [])
     getPosts:getPosts
   }
 })
+
+
+
+.factory('Comment', function ($http) {
+  var putComment= function (info) {
+    return $http({
+      method: 'POST',
+      url: '/api/putComment',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  };
+  
+
+  return {
+    putComment:putComment
+  }
+})

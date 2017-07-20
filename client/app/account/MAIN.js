@@ -1,6 +1,6 @@
 angular.module('main',[])
 
-.controller('mainController', function ($scope , $window , $location ,Post) {
+.controller('mainController', function ($scope , $window , $location ,Post,Comment) {
 	getPosts()
 	var email=$window.localStorage.getItem("job.finder.email");
 	$scope.posting=function(post){
@@ -14,11 +14,23 @@ angular.module('main',[])
 		}
 	}
 
+$scope.putComment=function(comment,key){
+Comment.putComment({email:email,
+					comment:comment,
+					key:key})
+		.then(function(i){
+				console.log(i);
+			getPosts();
+			$scope.comnttext="";
+		})
+		$scope.comnttext="";
+}
 
 function getPosts(){
 	Post.getPosts()
 	.then(function(i){
-	$scope.postInfo=i
+	$scope.postInfo=i;
+	//$scope.commentInfo=i.postInfo.comments;
 
 	})
 

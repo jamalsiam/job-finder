@@ -233,15 +233,24 @@ addWorkBefore:function(req,res){
 module.exports.handlePost={
   uploadPost:function(req,res){
     refPost.push({poster:req.body.email,
-      posterText:req.body.post})
+                postText:req.body.post})
 
     res.json("s")
   },
   getPosts:function(req,res){
+   refPost.once('value',
+      function(snap){
+       // console.log(snap.val())
+        res.json(snap.val());
+      })
 
-  }
+  },
+  putComment:function(req,res){
+    console.log(req.body)
+   refPost.child(req.body.key+"/comments").push({commenter:req.body.email,
+                comment:req.body.comment})
+    res.json("d");
 
 
-
-
+}
 }

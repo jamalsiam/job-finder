@@ -40,6 +40,9 @@ app.post('/api/Profile/addInterests',handlers.handleUser.addInterests);
 app.post('/api/Profile/addWorkBefore',handlers.handleUser.addWorkBefore);
 app.post('/api/uploadPost',handlers.handlePost.uploadPost);
 app.get('/api/getPosts',handlers.handlePost.getPosts);
+app.post('/api/putComment',handlers.handlePost.putComment);
+
+
 
 
 
