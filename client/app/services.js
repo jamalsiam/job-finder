@@ -238,8 +238,17 @@ angular.module('u.services', [])
       return res.data;
     });
   };
+   var getPosts= function () {
+    return $http({
+      method: 'GET',
+      url: '/api/getPosts',
+    }).then(function (res) {
+      return res.data;
+    });
+  };
 
   return {
-    uploadPost:uploadPost
+    uploadPost:uploadPost,
+    getPosts:getPosts
   }
 })

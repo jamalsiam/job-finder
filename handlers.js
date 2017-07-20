@@ -231,10 +231,17 @@ addWorkBefore:function(req,res){
 }
 
 module.exports.handlePost={
-uploadPost:function(req,res){
-refPost.push({poster:req.body.email,
-              posterText:req.body.post})
+  uploadPost:function(req,res){
+    refPost.push({poster:req.body.email,
+      posterText:req.body.post})
 
-res.json("s")
-}
+    res.json("s")
+  },
+  getPosts:function(req,res){
+
+  }
+
+
+
+
 }

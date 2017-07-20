@@ -20,7 +20,7 @@ var db = mongoose.connection;
 
 
 
-//app.get('/api/books',handlers.handelBook.showbook);
+
 app.post('/api/signup',handlers.handleUser.signUp);
 app.post('/api/signin',handlers.handleUser.signIn);
 app.post('/api/setSettings',handlers.handleUser.setSettings);
@@ -39,6 +39,7 @@ app.post('/api/Profile/addExperiences',handlers.handleUser.addExperiences);
 app.post('/api/Profile/addInterests',handlers.handleUser.addInterests);
 app.post('/api/Profile/addWorkBefore',handlers.handleUser.addWorkBefore);
 app.post('/api/uploadPost',handlers.handlePost.uploadPost);
+app.get('/api/getPosts',handlers.handlePost.getPosts);
 
 
 
