@@ -227,6 +227,15 @@ addWorkBefore:function(req,res){
 
     res.json("s");
   })
+},
+getSearchResult:function(req,res){
+    User.find({firstName:req.body.search})
+  .then(function (user) {
+        //console.log(user.firstName)
+
+        res.json(user);
+      })
+
 }
 }
 

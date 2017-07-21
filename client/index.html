@@ -2,13 +2,20 @@
 <html>
 <head>
 
-	<title>postman</title>
+
+	<title>I Job</title>
 	
 </head>
 <body ng-app='user'>
 <div class="container" ng-controller="indexController" >
   <a href="#home" style="padding-left:170px;"><img src="img/icon.png" width="17px"></a>
- 	<input type="text" placeholder="Search On Job Finder" style="margin-top: 5px;margin-left: 5px;">
+ 	
+ 	<input type="text" placeholder="Search On Job Finder" style="margin-top: 5px;margin-left: 5px;"  ng-model="searchText" ng-change="search(searchText)"  >
+	
+
+
+
+
 
       <a  href="#/signout" style="right:20px ;width:100px;float:right;padding-right:20px;" ng-if="email">signout</a>
     

@@ -361,6 +361,7 @@ label {
   font-size:20px;
   margin-left:20px;
   margin-top:20px;
+  margin-bottom:30px;
   color: #aaaaaa;
 }
 .uploadBox{
@@ -373,3 +374,35 @@ label {
   width: 40% 
     
 } 
+
+
+
+ul li input {
+  text-decoration: none;
+  
+  font-size: 20px;
+  margin: 5px;
+  display:inline-block;
+}
+ul {
+
+  display: inline;
+  margin: 0;
+  padding: 0;
+} 
+ul li:hover ul {display: block;
+  border: solid;
+  border-color:#303030;
+  border-radius: 20px; 
+}
+ul li ul {
+  position: absolute;
+  width: 340px;
+  display: none;
+}
+ul li ul li { 
+  background: #373737; 
+  display: block;
+  
+}
+ul li ul li a {display:block !important;} 

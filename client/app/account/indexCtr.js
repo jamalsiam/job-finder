@@ -1,16 +1,16 @@
 angular.module('index',[])
 
-.controller('indexController', function ($scope , $window , $location ) {
+.controller('indexController', function ($scope , $window , $location ,Search ) {
   $scope.email= $window.localStorage.getItem("job.finder.email");
-	//$window.location="/#/signin";
-// if( $scope.email){
-//     Settings.getSettings({email:$scope.email})
-//     .then(function (i) {
-//       $scope.fname=i.firstName;
-//       $scope.lname=i.lastName;
-//       $scope.imageProfile =i.imageProfile;
-//       })
+	
+  $scope.search=function(searchText){
+  	$scope.srhText=searchText;
+  	Search.getSearchResult({search:searchText})
+  	.then(function(i){
+	$scope.users=i;
 
- 
-// }
+  	})
+
+  }
+
 });

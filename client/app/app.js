@@ -37,6 +37,10 @@ angular.module('user',
       templateUrl: 'app/account/settings.html',
       controller:  'settingsController'
     }) 
+  .when('/search', {
+      templateUrl: 'app/account/search.html',
+      controller:  'indexController'
+    }) 
   .when('/profile', {
       templateUrl: 'app/account/profile.html',
       controller:  'profileController'
@@ -46,3 +50,4 @@ angular.module('user',
       redirectTo:'/main'
     })
 })
+

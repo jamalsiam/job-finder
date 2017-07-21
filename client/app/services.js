@@ -271,3 +271,20 @@ angular.module('u.services', [])
     putComment:putComment
   }
 })
+
+.factory('Search', function ($http) {
+  var getSearchResult= function (info) {
+    return $http({
+      method: 'POST',
+      url: '/api/getSearchResult',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  };
+  
+
+  return {
+    getSearchResult:getSearchResult
+  }
+})
