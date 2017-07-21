@@ -2,6 +2,9 @@ angular.module('settings',[])
 
 .controller('settingsController', function ($scope , $window , $location ,Settings) {
 	var email=$window.localStorage.getItem("job.finder.email");
+	if(!email)
+		$window.location="/#/signin";
+	
 	Settings.getSettings({email:email})
 	.then(function(i){
 		$scope.firstName=i.firstName;

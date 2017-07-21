@@ -2,6 +2,8 @@ angular.module('profile',[])
 
 .controller('profileController', function ($scope , $window , $location ,Profile) {
 	var email=$window.localStorage.getItem("job.finder.email");
+     if(!email)
+          $window.location="/#/signin";
 	Profile.getProfile({email:email})
 	.then(function(i){
 		$scope.info=i;

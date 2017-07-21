@@ -1,6 +1,9 @@
 angular.module('signin', [])
 
 .controller('signinController', function ($scope , $window , $location  ,Signin) {
+	var email=$window.localStorage.getItem("job.finder.email");
+	 if(email)
+          $window.location="/#/main";
 	$scope.signIn=function(email,password){
 		if(email && password){
 			Signin.signIn({email:email,

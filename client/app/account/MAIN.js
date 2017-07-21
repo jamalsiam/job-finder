@@ -17,34 +17,41 @@ angular.module('main',[])
 		}
 	}
 
-$scope.putComment=function(comment,key){
-	if(comment){
-Comment.putComment({email:email,
+	$scope.putComment=function(comment,key){
+		if(email){
+			if(comment && email){
+				Comment.putComment({email:email,
 					comment:comment,
 					key:key})
-		.then(function(i){
-			if(i){
-				$scope.comnttext=""
+				.then(function(i){
+					if(i){
+						$scope.comnttext=""
+					}
+					
+					getPosts();
+					
+				})
 			}
-				
-			getPosts();
-		
-		})
 		}
-		
-}
+		else
+		{
+			$window.location="/#/signin";
 
-function getPosts(){
-	Post.getPosts()
-	.then(function(i){
-	$scope.postInfo=i;
+		}
+
+	}
+
+	function getPosts(){
+		Post.getPosts()
+		.then(function(i){
+			$scope.postInfo=i;
 	//$scope.commentInfo=i.postInfo.comments;
 
-	})
+})
 
 
 
-}
+	}
 });
 
 
