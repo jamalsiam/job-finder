@@ -4,7 +4,10 @@ angular.module('main',[])
 	getPosts()
 	var email=$window.localStorage.getItem("job.finder.email");
 	$scope.posting=function(post){
-		if(post){
+		if(!email){
+			$window.location="/#/signin";
+		}
+		if(post && email){
 			Post.uploadPost({email:email,
 				post:post}).
 			then(function(i){
@@ -15,15 +18,20 @@ angular.module('main',[])
 	}
 
 $scope.putComment=function(comment,key){
+	if(comment){
 Comment.putComment({email:email,
 					comment:comment,
 					key:key})
 		.then(function(i){
-				console.log(i);
+			if(i){
+				$scope.comnttext=""
+			}
+				
 			getPosts();
-			$scope.comnttext="";
+		
 		})
-		$scope.comnttext="";
+		}
+		
 }
 
 function getPosts(){

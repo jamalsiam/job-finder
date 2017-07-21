@@ -11,19 +11,19 @@
 
 
 <div class="uploadBox" style="color:white" ng-repeat=" (key,post) in postInfo" >
-   <b style="font-size:20px">{{post.poster}}</b>
-   <p style="font-size:17px">{{post.postText}}</p>
+   <b style="font-size:20px"> <a href="#/user?id={{post.poster}}">{{post.poster}}</a></b>
+   <p style="font-size:15px">{{post.postText}}</p>
 <hr>
 
 <div style="padding-left:30px;padding-right:190px" ng-repeat="(key2,com) in post.comments ">
 
-	<b>{{com.commenter}}</b>
-	<p>{{com.comment}}</p>
+	<b style="font-size:12px"> <a href="#/user?id={{com.commenter}}">{{com.commenter}}</a></b>
+	<p style="font-size:10px">{{com.comment}}</p>
 <hr>
 </div>
 <div style="padding-left:30px;padding-right:30px">
 
-<input type="text" ng-model="comnttext"><input type="submit" ng-click="putComment(comnttext,key)" value="comment">
+<input type="text" ng-model="comnttext" placeholder="wirte a comment..."><input type="submit"  ng-if="comnttext"ng-click="putComment(comnttext,key)" value="comment">
 </div>
 
 </div>

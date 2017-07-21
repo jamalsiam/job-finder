@@ -1,0 +1,190 @@
+<style>
+
+
+ul li input {
+  text-decoration: none;
+  
+  font-size: 20px;
+  margin: 5px;
+  display:inline-block;
+}
+ul {
+
+  display: inline;
+  margin: 0;
+  padding: 0;
+} 
+ul li:hover ul {display: block;
+  border: solid;
+  border-color:#303030;
+  border-radius: 20px; 
+}
+ul li ul {
+  position: absolute;
+  width: 340px;
+  display: none;
+}
+ul li ul li { 
+  background: #373737; 
+  display: block;
+  
+}
+ul li ul li a {display:block !important;} 
+
+</style>
+
+<span ng-repeat="one in info">
+
+
+</span>
+
+<span style="float:left; margin-top:20px;margin-left:20px; ">
+  <img src="{{info.image_profile}}" height="250" width="200" style="margin-bottom:20px;" >
+  <table style="width:100%; color:white;">
+    <br>
+    
+    
+    <tr >
+      <td><img src="img/emailIcon.ico" height="35"></td>
+      <td style="margin-bottom:10px;" >{{info.email}}</td>
+
+    </tr>
+    <tr >
+      <td><img src="img/phoneIcon.ico" height="35"></td>
+      <td >{{info.phone}}</td>
+      
+    </tr>
+    <tr >
+      <td><img src="img/locationIcon.png" height="35"></td>
+      <td>{{info.address}}</td>
+      
+    </tr>
+  </tr>
+  <tr >
+    <td><img src="img/workicon.png" height="35"></td>
+    <td>{{info.work_at}}</td>
+    
+  </tr>
+
+  
+</table>
+</span>
+
+
+
+<span style="float:right; margin-top:20px;margin-left:20px;color:white; width:70%">
+  <p style="font-size:30px;margin-bottom:100px;margin-top:50px;">{{info.firstName}} {{info.lastName}}</p>
+  <div>
+    <ul>
+      <li>
+        <span class="labelSet">Education</span>
+     
+    <ol style="margin-left:40px;" ng-repeat="one in info.education">
+      <li  class="classOne">{{one.university}}</li>
+      <li  class="classTwo">{{one.major}}</li>
+      <li  class="classTwo">{{one.description}}</li>
+    </ol>
+  </div>
+
+  <div>
+    <ul>
+      <li>
+        <span class="labelSet">Skills</span>
+       
+    <ol style="margin-left:40px;" ng-repeat="one in info.skills">
+      <li    class="classOne">{{one.skill}}</li>
+      <li    class="classTwo">{{one.description}}</li>
+      
+    </ol>
+  </div>
+  <div>
+    <ul>
+      <li>
+        <span class="labelSet">Technical Skills</span>
+      
+    <ol style="margin-left:40px;" ng-repeat="one in info.technical_skills">
+      <li    class="classOne">{{one.technical_skill}}</li>
+      <li    class="classTwo">{{one.description}}</li>
+      
+    </ol>
+  </div>
+
+  <div>
+    <ul>
+      <li>
+        <span class="labelSet">Certificates</span>
+       
+    <ol style="margin-left:40px;" ng-repeat="one in info.certificates">
+      <li    class="classOne">{{one.certificate}}</li>
+      <li    class="classTwo">{{one.description}}</li>
+      
+    </ol>
+  </div>
+
+
+
+
+  <div>
+    <ul>
+      <li>
+        <span class="labelSet">Personal Projects</span>
+        
+    <ol style="margin-left:40px;" ng-repeat="one in info.personal_projects">
+      <li    class="classOne">{{one.project}}</li>
+      <li    class="classTwo">{{one.description}}</li>
+      
+    </ol>
+  </div>
+
+
+
+  <div>
+    <ul>
+      <li>
+        <span class="labelSet">Experiences</span>
+        
+    <ol style="margin-left:40px;" ng-repeat="one in info.experiences">
+      <li    class="classOne">{{one.experience}}</li>
+      <li   class="classTwo">{{one.duration}}</li>
+      <li class="classTwo">{{one.description}}</li>
+      
+    </ol>
+  </div>
+
+
+
+
+
+
+
+  <div>
+    <ul>
+      <li>
+        <span class="labelSet">Interests</span>
+       
+       
+    <ol style="margin-left:15px;" ng-repeat="one in info.interests">
+      <li  style="font-size:15px;margin-left:40px;" class="classTwo">{{one.interest}}</li>  
+    </ol>
+  </div>
+
+
+
+
+
+
+
+
+  <div>
+    <ul>
+      <li>
+        <span class="labelSet">Work Before</span>
+       
+    <ol style="margin-left:40px;" ng-repeat="one in info.work_before">
+      <li   class="classOne">{{one.company}}</li>
+      <li   class="classTwo">{{one.duration}}</li>
+      
+    </ol>
+  </div>
+
+</span>

@@ -6,6 +6,7 @@ angular.module('user',
    'settings',
    'profile',
    'main',
+   'users',
    'index',
    'u.services',
    'ngRoute'
@@ -23,6 +24,10 @@ angular.module('user',
   .when('/signup', {
       templateUrl: 'app/account/signup.html',
       controller:  'signupController'
+    })
+  .when('/user', {
+      templateUrl: 'app/account/user.html',
+      controller:  'userController'
     })
   .when('/signout', {
       templateUrl: 'app/account/signout.html',
